@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>National Parks Service API Project</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+
+      <header>
+          <h1>National Parks</h1>
+      </header>
+        
+      <div class="container">
+        <form id="js-form">
+            <label for="search-term"><span>Search term</span></label>
+            <input type="text" name="search-term" id="js-search-term" required>
+
+            <label for="max-results"><span>Maximum results to return</span></label>
+            <input type="number" name="max-results" id="js-max-results" value="10">
+
+            <label for="search-states"><span>Filter by States and Territories</span></label>
+            <select class="states-select" name="states[]" multiple="multiple" style="width:80%; margin-bottom: 2rem; height:50px;">
+            </select>
+
+            <input class="submit-btn" type="submit" value="Go!">
+        </form>
+
+        <p id="js-waiting-message" class="waiting-message"></p>
+        <p id="js-error-message" class="error-message"></p>
+        <section id="results" class="hidden">
+          <h2>Search results</h2>
+          <ol id="results-list">
+          </ol>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+    <script src="states.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

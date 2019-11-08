@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #eef4f8;
+  margin: 0;
+  color: #1d253c;
+}
+
+@font-face {
+  font-family: 'NationalPark';
+  src: url(../fonts/Klavika-Regular.otf), weight:normal;
+  src: url(../fonts/Klavika-Bold.otf), weight:bold;
+} 
+
+header {
+  padding: 1rem;
+  text-align: center;
+  background-color: #f2ba42;
+  color: white;
+}
+
+form {
+  background-color: #004D80;
+  width: 960px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#js-search-term {
+  margin-bottom: 2rem;
+  width: 80%;
+}
+
+#js-max-results {
+  margin-bottom: 2rem;
+  width: 80%;
+}
+
+.states-select {
+  width: 80%;
+  margin-bottom: 2rem !important;
+   !important;
+}
+
+.submit-btn {
+  width: 200px;
+  margin-top: 2rem;
+}
+
+label {
+  text-align: left;
+
+}
+
+label>span {
+  color: white;
+  padding: 5px;
+}
+
+h1 {
+  margin: 0;
+
+}
+
+button, input[type="text"] {
+  padding: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.error-message {
+    color: red;
+}
+
+.hidden {
+  display: none;
+}
