@@ -8,28 +8,31 @@
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
 
       <header>
-          <h1>National Parks</h1>
+          
       </header>
         
       <div class="container">
+        <h1>NATIONAL PARKS</h1>
+        <h2>Search 500+ national parks, monuments, and sites.<br> Powered by the <a href="https://www.nps.gov/subjects/digital/nps-data-api.htm">National Parks API.</a> </h2>
         <form id="js-form">
-            <label for="search-term"><span>Search term</span></label>
-            <input type="text" name="search-term" id="js-search-term" required>
+            <label for="search-term"><span>Search</span></label>
+            <input type="text" name="search-term" id="js-search-term" placeholder="ex. Grand Canyon" required>
 
-            <label for="max-results"><span>Maximum results to return</span></label>
+            <label for="max-results"><span>Maximum Results</span></label>
             <input type="number" name="max-results" id="js-max-results" value="10">
 
             <label for="search-states"><span>Filter by States and Territories</span></label>
-            <select class="states-select" name="states[]" multiple="multiple" style="width:80%; margin-bottom: 2rem; height:50px;">
+            <select class="states-select hello" name="states[]" multiple="multiple" style="width:400px; margin-bottom: 2rem;">
             </select>
 
-            <input class="submit-btn" type="submit" value="Go!">
+            <button class="submit-btn" type="submit" value="Go!">Search</button>
         </form>
 
         <p id="js-waiting-message" class="waiting-message"></p>
