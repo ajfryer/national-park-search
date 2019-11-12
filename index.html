@@ -22,17 +22,17 @@
         <h1>NATIONAL PARKS</h1>
         <h2>Search 500+ national parks, monuments, and sites.<br> Powered by the <a href="https://www.nps.gov/subjects/digital/nps-data-api.htm">National Parks API.</a> </h2>
         <form id="js-form">
-            <label for="search-term"><span>Search</span></label>
+            <label for="search-term"><span>Search Term</span></label>
             <input type="text" name="search-term" id="js-search-term" placeholder="ex. Grand Canyon" required>
 
             <label for="max-results"><span>Maximum Results</span></label>
             <input type="number" name="max-results" id="js-max-results" value="10">
 
             <label for="search-states"><span>Filter by States and Territories</span></label>
-            <select class="states-select hello" name="states[]" multiple="multiple" style="width:400px; margin-bottom: 2rem;">
+            <select class="states-select hello" name="states[]" multiple="multiple" style="width:95%; margin-bottom: 2rem;">
             </select>
 
-            <button class="submit-btn" type="submit" value="Go!">Search</button>
+            <button class="submit-btn" type="submit">Search</button>
         </form>
 
         <p id="js-waiting-message" class="waiting-message"></p>

@@ -22,8 +22,14 @@ function formatQueryParams(params) {
 
 function displayResults(responseJson) {
   // if there are previous results, remove them
-  console.log(responseJson);
-  console.log(responseJson.data.length);
+  if (responseJson.data.length == 0) {
+    $('#results-list').empty();
+    $('#results').append(
+      `<p class="no-results-message">No results found. Please try another search.</p>`
+    )
+    $('#results').removeClass('hidden');
+    return;
+  }
   $('#results-list').empty();
   // iterate through the items array
   for (let i = 0; i < responseJson.data.length; i++){
@@ -31,11 +37,33 @@ function displayResults(responseJson) {
     //array, add a list item to the results 
     //list with the video title, description,
     //and thumbnail
+    let site = responseJson.data[i];
+    let addressStr = '';
+    if (site.addresses.find(obj => obj.type == `Physical`)) {
+      let addressObj = site.addresses.find(obj => obj.type == `Physical`);
+      console.log(addressObj);
+      let addressKeys = Object.keys(addressObj)
+      addressStr = 
+        `${addressObj.line1} 
+        ${addressObj.line2 !== 'undefined' ? addressObj.line2 : ""} 
+        ${addressObj.line3 !== 'undefined' ? addressObj.line3 : ""}  
+        ${addressObj.city} ${addressObj.stateCode} 
+        ${addressObj.postalCode}`;
+    }
+    /*for (let j=0; j<addressKeys.length; j++) {
+      let addressVal = addressObj[addressKeys[j]]
+
+      if (typeof addressVal !== 'undefined' && addressKeys[j] !== 'type') {
+        addressStr += ` ${addressVal}`;
+      } 
+    }*/
     $('#results-list').append(
-      `<li><h3>${responseJson.data[i].name}</h3>
-      <p>${responseJson.data[i].url}</p>
+      `<li><h3><a href="${site.url}">${site.fullName}</a></h3>
+      <h4>${addressStr}</h4>
+      <p>${site.description}</p>
       </li>`
-    )};
+    )
+  };
   //display the results section  
   $('#results').removeClass('hidden');
 };
@@ -46,7 +74,8 @@ function fetchResults(query, maxResults=10, states) {
     q: query,
     start: 1,
     limit: maxResults,
-    stateCode: states
+    stateCode: states,
+    fields: `addresses`
   };
   const queryString = formatQueryParams(params)
   const url = searchURL + '?' + queryString;
@@ -74,9 +103,6 @@ function watchForm() {
     const searchTerm = $('#js-search-term').val();
     const maxResults = $('#js-max-results').val();
     const searchStates = $('.states-select').val().join();
-    console.log(searchStates);
-    console.log(searchTerm);
-    console.log(maxResults);
     $('#js-waiting-message').text(`Searching...`);
     $('#results-list').empty();
     fetchResults(searchTerm, maxResults, searchStates);

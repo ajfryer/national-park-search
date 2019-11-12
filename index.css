@@ -2,11 +2,15 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (2560 - 320)));
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #E2E1E0;
   margin: 0;
-  color: #9EA57D;
+  color: #6A6F4F;
 }
 
 @font-face {
@@ -41,14 +45,14 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 350px;
+  height: 150px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 form {
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
-  padding: 25px 0;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,18 +64,17 @@ form {
 
 #js-search-term {
   margin-bottom: 2rem;
-  width: 400px;
+  width: 95%;
 }
 
 #js-max-results {
   margin-bottom: 2rem;
-  width: 400px;
+  width: 95%;
 }
 
 .states-select {
   width: 400px;
   margin-bottom: 2rem !important;
-   !important;
 }
 
 .submit-btn {
@@ -93,7 +96,6 @@ label>span {
 h1 {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.75rem;
   font-weight: 800;
   color: #6A6F4F;
   text-align: center;
@@ -106,6 +108,7 @@ h2 {
   font-weight: 500;
   margin-bottom: 2rem;
   color: #6A6F4F;
+  font-size: 1.25rem;
 }
 
 h2 a {
@@ -116,6 +119,22 @@ input {
   padding: 7px;
   border-radius: 4px;
   border: 1px solid #aaa;
+  width: 95%;
+  color: #6A6F4F;
+  font-weight: 600;
+}
+
+input::placeholder {
+  color: 	darkgray;
+}
+
+.select2-container .select2-selection--multiple {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  min-height: 32px !important;
+  user-select: none;
+  border-radius: 4px;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered {
@@ -126,6 +145,16 @@ input {
   padding: 5px 10px;
   width: 100%;
   border: 0px solid white;
+  color: #6A6F4F;
+  font-weight: 600;
+  background-color: white;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border: 1px solid #6A6F4F !important;
+  outline: 0;
 }
 
 select {
@@ -155,12 +184,29 @@ button {
 }
 
 #results {
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
 }
 
 #results h2 {
   font-weight: 700;
+}
+
+#results ol {
+  padding-left: 1rem;
+}
+
+#results li {
+  margin-top: 3rem;
+  color:#6A6F4F
+}
+
+#results a {
+  color:#6A6F4F
+}
+
+p.no-response-message {
+  text-align: center;
 }
 
 button:hover {
@@ -170,17 +216,64 @@ button:hover {
 
 .container {
   max-width: 960px;
-  padding: 50px 0px 50px 0px;
+  padding: 2rem 0px 2rem 0px;
   min-height: 100vh;
-  margin: -150px auto 0px auto;
+  margin: 0px auto 0px auto;
   background-color: white;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .error-message {
     color: red;
+    text-align: center;
 }
 
 .hidden {
   display: none;
+}
+
+@media only screen and (min-width: 640px) {
+  header {
+    height: 250px;
+  }
+}
+
+
+@media only screen and (min-width: 960px) {
+  header {
+    padding: 1rem;
+    text-align: center;
+    
+    color: white;
+    width: 100%;
+    background-image: url("img/headerBg.jpg");
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+
+  .container {
+    max-width: 960px;
+    padding: 50px 0px 50px 0px;
+    min-height: 100vh;
+    margin: -150px auto 0px auto;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+
+  form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #CDD1BC;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin-bottom: 2rem;
+  }
 }
