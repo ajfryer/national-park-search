@@ -46,10 +46,16 @@ font-weight: thin;
 
 .donate-banner a {
   color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.donate-banner:hover {
+  background-color: #9EA57E;
 }
 
 header {
-  padding: 1rem;
+
   text-align: center;
   
   color: white;
@@ -289,7 +295,6 @@ p.no-response-message {
 
 @media only screen and (min-width: 960px) {
   header {
-    padding: 1rem;
     text-align: center;
     
     color: white;
