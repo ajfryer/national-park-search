@@ -1,4 +1,4 @@
-var stateCodes = 
+const stateCodes = 
 [
   {
       text: "Alabama",
@@ -237,3 +237,5 @@ var stateCodes =
       id: "WY"
   }
 ]
+
+$('.states-select').select2({data: stateCodes});

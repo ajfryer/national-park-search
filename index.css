@@ -164,7 +164,7 @@ select {
   padding: 10px !important;
 }
 
-button {
+form button {
   padding: 15px 5px;
   background-color: #6A6F4F;
   color: white;
@@ -175,6 +175,11 @@ button {
   border: none;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+form button:hover {
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 #js-waiting-message {
@@ -209,7 +214,34 @@ p.no-response-message {
   text-align: center;
 }
 
-button:hover {
+#results .pagination-btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+#results button {
+  padding: 15px 5px;
+  width: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  background-color: #E2E1E0;
+  color: darkgray;
+  margin: 0 .5rem;
+}
+
+#results button.active {
+  background-color: #6A6F4F;
+  color: white; 
+}
+
+#results button.active:hover {
   cursor: pointer;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
